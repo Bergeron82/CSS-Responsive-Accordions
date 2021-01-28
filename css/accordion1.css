@@ -1,0 +1,271 @@
+* {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    }
+body { background-color: rgb(206, 201, 201);}
+#container { 
+    width:100%;
+    height: 900px;
+    margin:auto;
+    background-color: #fff;
+}
+#container header { 
+    text-align: center; 
+}
+.title {
+    position: relative;
+    margin-bottom: 45px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 44px;
+    text-transform: uppercase;
+    color: rgb(59, 59, 59);
+}
+h1 { text-transform: uppercase; 
+    color: rgb(59, 59, 59);
+}
+hr { width: 70%;
+    margin: 0 auto;
+}
+h2 { color: gray; }
+.pipe { color: greenyellow; }
+nav { 
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+    height: 70px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+    background-color: rgb(59, 59, 59);
+    text-transform: uppercase;
+    position: fixed;
+    top: 0;
+}
+
+nav li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: 0 1.5em;
+    padding: 0;
+}
+
+nav a {
+    padding: 0.5em 0;
+    position: relative;
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: rgb(182, 182, 182);
+}
+nav a:before, nav a:after { 
+    position: absolute;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+nav a:before { 
+    bottom: 0;
+    display: block;
+    height: 3px;
+    width: 0%;
+    content: "";
+    background-color: greenyellow;
+}
+
+nav a:after { 
+    left: 0;
+    top: 0;
+    padding: 0.5em 0;
+    position: absolute;
+    content: attr(data-hover);
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+    max-width: 0%;
+    overflow: hidden;
+}
+
+nav a:hover:before {
+    opacity: 1;
+    width: 100%;
+}
+
+nav a:hover:after, nav .current a:after { max-width: 100%; }
+  
+.gallery-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 70vh;
+    margin-top: 2em;
+}
+  
+.item {
+    flex: 1;
+    height: 80%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    transition: flex 0.8s ease;
+}  
+.heading { 
+    background-color: rgb(255, 255, 255, .5);
+    color: rgb(59, 59, 59);
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 100%;
+}
+.item:hover {
+      flex: 7;
+}
+.text { display: none; 
+    width: 100%;
+    color: rgb(59, 59, 59);
+    text-transform: none;
+    background-color: rgb(255, 255, 255, .5);
+    margin: 0 auto;
+    font-weight: 600;
+    padding-left: 20px;
+}
+.item:hover .text { display: contents;
+}
+
+.item-1 { 
+    background-image: url(../assets/clouds1.jpg);
+}
+.item .heading {
+    padding: 0 35% 8% 35%;
+}
+.item:hover .heading {
+    padding: 0 45% 8% 45%;
+    background-color: rgb(255, 255, 255, .8);
+}
+.item-2 { 
+    background-image: url(../assets/clouds2.jpg);
+}
+.item-3 { 
+    background-image: url(../assets/clouds3.jpg);
+}
+  
+.item-4 { 
+    background-image: url(../assets/clouds4.jpg);
+}
+.item-4 .heading {
+    padding: 0 29.8% 8% 29.8%;
+}
+.item-4:hover .heading {
+    padding: 0 42.75% 6% 42.75%;
+}
+
+footer { background-color: greenyellow;
+    padding: 2em;
+    text-align: center;
+    margin-top: -4em;
+    line-height: 30px;
+}
+
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px) { 
+    #container { max-width: 800px;
+        height: 1000px;
+    }
+    nav { height: 230px; 
+        position: relative;
+        width: initial;
+        padding-bottom: 0;
+    }
+
+    nav li { 
+        display: block;
+        margin: 0 auto;
+        padding-top: 25px; 
+    }
+
+    nav a { width: 100%; 
+    padding-left: 0; 
+    } 
+
+    nav a:before { display: inline-block; }
+    #container header { padding: 1.2em 0;
+        width: 80%; 
+        margin: 0 auto;
+    }
+    .title { margin-bottom: -20px;}
+    hr { margin-bottom: 1em; }
+    .gallery-wrap { margin-top: 0;}
+    .item .heading {
+        padding: 0 18% 8% 18%;
+    }
+    .item-1 .heading {
+        padding: 0 20% 8% 20%;
+    }
+    .item:hover .heading {
+        padding: 0 35% 30% 35%;
+        background-color: rgb(255, 255, 255, .8);
+    }
+    footer { margin-top: -9em; }
+}
+
+@media only screen 
+and (min-width : 375px) 
+and (max-width : 667px) 
+{
+    nav { height: 230px; 
+        position: relative;
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    nav li { 
+        display: block;
+        margin: 0 auto;
+        padding-top: 25px; 
+    } 
+    nav a { width: 100%;
+        padding-left: 0;
+    }
+    nav a:before { display: inline-block; }
+    #container { height: 1000px;}
+    #container header { padding: 1.2em 0;
+        width: 80%; 
+        margin: 0 auto;
+    }
+    .title { margin-bottom: -20px;}
+    hr { margin-bottom: 1em; }
+    footer { font-size: .8em; }
+    .gallery-wrap { margin-top: 0;}
+    .heading { font-size: .8em;}
+    .text { font-size: .8em;}
+    .item .heading {
+        padding: 10px 8% 8% 8%;
+    }
+    .item-1 .heading {
+        padding: 10px 11% 8% 11%;
+    }
+    .item:hover .heading {
+        padding: 10px 25% 200% 25%;
+        background-color: rgb(255, 255, 255, .8);
+    }
+    footer { margin-top: -9em; }
+}
+
+@media only screen 
+and (min-width: 1025px) {
+    #container { 
+        margin: 0 auto;  
+        width: 85%; 
+    }
+    nav { height: 80px; 
+        width: 85%;
+    }
+    #container h1 { padding-top: 1.5em; 
+    }
+    .title { margin-top: 1.5em;
+        margin-bottom: -1em;
+    }
+    footer { margin-top: -8.5em;}
+}
+
